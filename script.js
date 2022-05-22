@@ -17,8 +17,12 @@ const account1 = {
     "2022-03-11T11:44:09.932Z",
     "2022-03-01T11:44:09.932Z",
     "2022-02-16T11:44:09.932Z",
-    "2022-02-06T11:44:09.932Z",
-    "2022-01-05T11:44:09.932Z",
+    "2022-02-10T11:44:09.932Z",
+    "2022-04-06T11:44:09.932Z",
+    "2022-03-05T11:44:09.932Z",
+    "2022-04-09T11:44:09.932Z",
+    "2022-03-08T11:44:09.932Z",
+    "2022-01-10T11:44:09.932Z",
   ],
 };
 
@@ -34,8 +38,12 @@ const account2 = {
     "2022-03-11T11:44:09.932Z",
     "2022-03-01T11:44:09.932Z",
     "2022-02-16T11:44:09.932Z",
-    "2022-02-06T11:44:09.932Z",
-    "2022-01-05T11:44:09.932Z",
+    "2022-02-10T11:44:09.932Z",
+    "2022-04-06T11:44:09.932Z",
+    "2022-03-05T11:44:09.932Z",
+    "2022-04-09T11:44:09.932Z",
+    "2022-03-08T11:44:09.932Z",
+    "2022-01-10T11:44:09.932Z",
   ],
 };
 
@@ -51,8 +59,12 @@ const account3 = {
     "2022-03-11T11:44:09.932Z",
     "2022-03-01T11:44:09.932Z",
     "2022-02-16T11:44:09.932Z",
-    "2022-02-06T11:44:09.932Z",
-    "2022-01-05T11:44:09.932Z",
+    "2022-02-10T11:44:09.932Z",
+    "2022-04-06T11:44:09.932Z",
+    "2022-03-05T11:44:09.932Z",
+    "2022-04-09T11:44:09.932Z",
+    "2022-03-08T11:44:09.932Z",
+    "2022-01-10T11:44:09.932Z",
   ],
 };
 
@@ -68,8 +80,12 @@ const account4 = {
     "2022-03-11T11:44:09.932Z",
     "2022-03-01T11:44:09.932Z",
     "2022-02-16T11:44:09.932Z",
-    "2022-02-06T11:44:09.932Z",
-    "2022-01-05T11:44:09.932Z",
+    "2022-02-10T11:44:09.932Z",
+    "2022-04-06T11:44:09.932Z",
+    "2022-03-05T11:44:09.932Z",
+    "2022-04-09T11:44:09.932Z",
+    "2022-03-08T11:44:09.932Z",
+    "2022-01-10T11:44:09.932Z",
   ],
 };
 
@@ -191,7 +207,7 @@ let ekrangaTranzaksiyalarniChiqarish = function (obj) {
 
     let qalay = `
           <div class="movements__row">
-          <div class="movements__type movements__type--${tekshiruv}">${
+          <div class="movements__type movements__type--${tekshiruv}">deposit ${
       key + 1
     }</div>
     <div class="movements__date">${kun} / ${oy} / ${yil}</div>
@@ -212,7 +228,6 @@ const updateUI = function () {
 };
 
 btnLogin.addEventListener("click", function (e) {
-  //default holatlarni ochirish
   e.preventDefault();
 
   let login = inputLoginUsername.value;
@@ -242,9 +257,7 @@ btnTransfer.addEventListener("click", function (e) {
 
   let transferTo = inputTransferTo.value;
   let transferamount = Number(inputTransferAmount.value);
-  let oluvchi = accounts.find(function (val) {
-    return val.userName == transferTo;
-  });
+  let oluvchi = accounts.find((val) => val.userName == transferTo);
   if (
     transferamount < pulYigindisi(kirganUser) &&
     transferTo !== kirganUser.userName
