@@ -1,3 +1,3 @@
-# bank_systems mini sistem README.md
+# bank_systems mini sistem
 https://bekzodbaratov.github.io/bank_system/
 
